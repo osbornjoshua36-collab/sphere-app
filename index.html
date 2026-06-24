@@ -394,7 +394,7 @@ background:transparent;border:1.5px solid rgba(255,255,255,.45);border-radius:9p
 .modal-btn:hover{background:var(--terra);}
 
 /* ─── TOAST ─── */
-#toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#F0F6FF;font-size:12px;padding:10px 16px;border-radius:25px;z-index:1000;white-space:nowrap;pointer-events:auto;display:flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(30,50,69,.35);}
+#toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#F0F6FF;font-size:12px;padding:10px 16px;border-radius:25px;z-index:1000;white-space:nowrap;pointer-events:auto;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(30,50,69,.35);}
 #toastUndoBtn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:12px;color:#F0F6FF;font-size:11px;font-weight:600;padding:3px 11px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s;white-space:nowrap;}
 #toastUndoBtn:hover{background:rgba(255,255,255,.28);}
 
@@ -830,6 +830,41 @@ body.dark-mode .now-sub{color:rgba(255,255,255,.5);}
 .feedback-textarea:focus{border-color:var(--navy);}
 .feedback-tag{display:inline-flex;align-items:center;padding:5px 12px;border-radius:20px;border:1.5px solid var(--bdr-md);background:var(--wh);font-size:11px;color:var(--muted);cursor:pointer;transition:all .14s;font-family:'DM Sans',sans-serif;}
 .feedback-tag.active{border-color:var(--terra);background:var(--terra-l);color:var(--terra-d);font-weight:600;}
+
+/* ── ZENFLOW INTEGRATION PANELS ── */
+.zf-panel{display:flex;flex-direction:column;width:100%;height:100%;overflow:hidden;}
+.zf-toolbar{display:flex;align-items:center;gap:6px;padding:8px 16px;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;}
+.zf-toolbar-title{font-family:'Fraunces',serif;font-size:13px;color:rgba(255,255,255,.85);font-weight:400;margin-right:4px;}
+.zf-nav-btn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.65);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+.zf-nav-btn:hover{background:rgba(255,255,255,.14);color:#fff;}
+.zf-nav-btn.active{background:rgba(232,148,90,.2);border-color:var(--terra);color:var(--terra);}
+.zf-sync-btn{margin-left:auto;background:rgba(91,170,126,.15);border:1px solid rgba(91,170,126,.3);border-radius:7px;padding:4px 12px;font-size:11px;color:var(--sage);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:5px;}
+.zf-sync-btn:hover{background:rgba(91,170,126,.25);}
+.zf-settings-btn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.zf-settings-btn:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.8);}
+.zf-iframe-wrap{flex:1;position:relative;overflow:hidden;}
+.zf-iframe-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.zf-connect-card{flex:1;display:flex;align-items:center;justify-content:center;background:var(--cream);}
+.zf-connect-inner{max-width:400px;width:100%;padding:40px 32px;background:var(--wh);border:1px solid var(--bdr);border-radius:20px;text-align:center;}
+.zf-connect-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;}
+.zf-connect-title{font-family:'Fraunces',serif;font-size:20px;font-weight:400;color:var(--txt);margin-bottom:6px;}
+.zf-connect-sub{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+.zf-url-input{width:100%;border:1.5px solid var(--bdr-md);border-radius:10px;padding:10px 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--txt);background:var(--cream);outline:none;margin-bottom:10px;}
+.zf-url-input:focus{border-color:var(--sky);}
+.zf-url-input::placeholder{color:var(--hint);}
+.zf-connect-btn{width:100%;padding:11px;border-radius:10px;border:none;cursor:pointer;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.zf-connect-btn.primary{background:var(--navy);color:#F0F6FF;}
+.zf-connect-btn.primary:hover{background:var(--navy-lt);}
+.zf-connect-btn.secondary{background:transparent;color:var(--muted);margin-top:6px;font-size:12px;}
+.zf-sync-overlay{position:absolute;bottom:16px;right:16px;background:var(--navy);color:#F0F6FF;border-radius:12px;padding:10px 16px;font-size:11px;display:none;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(30,50,69,.35);z-index:10;}
+.zf-sync-overlay.show{display:flex;}
+.zf-sync-dot{width:7px;height:7px;border-radius:50%;background:var(--sage);animation:blink 1.5s infinite;}
+.zf-appt-list{flex:1;overflow-y:auto;padding:16px;}
+.zf-appt-card{background:var(--wh);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:12px;}
+.zf-appt-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.zf-appt-title{font-size:13px;font-weight:500;color:var(--txt);}
+.zf-appt-meta{font-size:11px;color:var(--muted);margin-top:2px;}
+.zf-appt-badge{font-size:10px;padding:2px 9px;border-radius:10px;font-weight:500;}
 </style>
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
@@ -935,6 +970,16 @@ body.dark-mode .now-sub{color:rgba(255,255,255,.5);}
         </div>
 
         <!-- MY SERVICES -->
+        <div class="nav-cat" id="nav-services" onclick="navTo('services')">
+          <div class="nc-icon-wrap" style="background:var(--sky-l);">🛍️</div>
+          <div class="nc-label">My Services</div>
+        </div>
+
+        <!-- MY BUSINESS -->
+        <div class="nav-cat" id="nav-business" onclick="navTo('business')">
+          <div class="nc-icon-wrap" style="background:var(--amber-l);">🏢</div>
+          <div class="nc-label">My Business</div>
+        </div>
 
         <!-- MY FINANCES -->
 
@@ -1452,6 +1497,82 @@ body.dark-mode .now-sub{color:rgba(255,255,255,.5);}
 
           </div>
 
+
+      <!-- ══ MY SERVICES ══ -->
+      <div class="view" id="view-services" style="padding:0;overflow:hidden;">
+        <div class="zf-panel" id="zf-services-panel">
+          <!-- TOOLBAR -->
+          <div class="zf-toolbar" id="zf-services-toolbar" style="display:none;">
+            <span class="zf-toolbar-title">🛍️ My Services</span>
+            <button class="zf-nav-btn active" id="zfb-srv-jobs"    onclick="zfServicesNav('jobs')">My Jobs</button>
+            <button class="zf-nav-btn"         id="zfb-srv-browse" onclick="zfServicesNav('browse')">Browse Services</button>
+            <button class="zf-nav-btn"         id="zfb-srv-msgs"   onclick="zfServicesNav('messages')">Messages</button>
+            <button class="zf-nav-btn"         id="zfb-srv-sched"  onclick="zfServicesNav('schedule')">My Schedule</button>
+            <button class="zf-sync-btn" onclick="syncZenFlowAppointments('services')">⟳ sync schedule</button>
+            <button class="zf-settings-btn" onclick="openZFSettings('services')">⚙</button>
+          </div>
+          <!-- CONNECT CARD (shown when not yet configured) -->
+          <div class="zf-connect-card" id="zf-services-connect">
+            <div class="zf-connect-inner">
+              <div class="zf-connect-icon" style="background:var(--sky-l);">🛍️</div>
+              <div class="zf-connect-title">Connect Your Services</div>
+              <div class="zf-connect-sub">Enter your ZenFlow app URL to access your bookings, messages, and service schedule — right here inside Sphere.</div>
+              <input class="zf-url-input" id="zf-services-url-input" placeholder="https://your-app.base44.app" type="url">
+              <button class="zf-connect-btn primary" onclick="connectZenFlow('services')">Connect ZenFlow</button>
+              <div style="font-size:11px;color:var(--hint);margin-top:12px;">
+                Don't have ZenFlow yet? <a href="https://base44.com" target="_blank" style="color:var(--sky);text-decoration:underline;">Get started at base44.com</a>
+              </div>
+            </div>
+          </div>
+          <!-- IFRAME (shown after connected) -->
+          <div class="zf-iframe-wrap" id="zf-services-iframe-wrap" style="display:none;position:relative;">
+            <iframe id="zf-services-iframe" src="" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation" allowfullscreen></iframe>
+            <div class="zf-sync-overlay" id="zf-services-sync-overlay">
+              <div class="zf-sync-dot"></div>
+              <span>Syncing appointments to your schedule…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ MY BUSINESS ══ -->
+      <div class="view" id="view-business" style="padding:0;overflow:hidden;">
+        <div class="zf-panel" id="zf-business-panel">
+          <!-- TOOLBAR -->
+          <div class="zf-toolbar" id="zf-business-toolbar" style="display:none;">
+            <span class="zf-toolbar-title">🏢 My Business</span>
+            <button class="zf-nav-btn active" id="zfb-biz-dash"     onclick="zfBusinessNav('/')">Dashboard</button>
+            <button class="zf-nav-btn"         id="zfb-biz-sched"   onclick="zfBusinessNav('/scheduling')">Scheduling</button>
+            <button class="zf-nav-btn"         id="zfb-biz-clients" onclick="zfBusinessNav('/clients')">Clients</button>
+            <button class="zf-nav-btn"         id="zfb-biz-leads"   onclick="zfBusinessNav('/leads')">Leads</button>
+            <button class="zf-nav-btn"         id="zfb-biz-invoice" onclick="zfBusinessNav('/invoicing')">Invoicing</button>
+            <button class="zf-nav-btn"         id="zfb-biz-finance" onclick="zfBusinessNav('/finance')">Finance</button>
+            <button class="zf-sync-btn" onclick="syncZenFlowAppointments('business')">⟳ sync schedule</button>
+            <button class="zf-settings-btn" onclick="openZFSettings('business')">⚙</button>
+          </div>
+          <!-- CONNECT CARD -->
+          <div class="zf-connect-card" id="zf-business-connect">
+            <div class="zf-connect-inner">
+              <div class="zf-connect-icon" style="background:var(--amber-l);">🏢</div>
+              <div class="zf-connect-title">Connect Your Business</div>
+              <div class="zf-connect-sub">Enter your ZenFlow business URL to manage your dashboard, scheduling, clients, invoicing, and more — all from within Sphere.</div>
+              <input class="zf-url-input" id="zf-business-url-input" placeholder="https://your-app.base44.app" type="url">
+              <button class="zf-connect-btn primary" onclick="connectZenFlow('business')">Connect ZenFlow</button>
+              <div style="font-size:11px;color:var(--hint);margin-top:12px;">
+                <a href="https://base44.com" target="_blank" style="color:var(--sky);text-decoration:underline;">base44.com</a> — build your ZenFlow business app
+              </div>
+            </div>
+          </div>
+          <!-- IFRAME -->
+          <div class="zf-iframe-wrap" id="zf-business-iframe-wrap" style="display:none;position:relative;">
+            <iframe id="zf-business-iframe" src="" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation" allowfullscreen></iframe>
+            <div class="zf-sync-overlay" id="zf-business-sync-overlay">
+              <div class="zf-sync-dot"></div>
+              <span>Syncing business appointments to your schedule…</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <div class="modal-wrap" id="modalWrap">
   <!-- ADD TASK -->
@@ -5002,7 +5123,7 @@ refreshMyView();
 bootApp();
 
 // Show auth overlay after DOM is fully parsed
-// (auth HTML is after </script> so we must wait for DOMContentLoaded)
+// Auth overlay is rendered after the main script block, so wait for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function(){
   var overlay = document.getElementById('authOverlay');
   if(overlay) overlay.style.display = 'flex';
@@ -6531,7 +6652,219 @@ function undoLastComplete(){
   renderTimeline();
   toast('↩ undone');
 }
+
+// ══════════════════════════════════════════════════════════════
+// ZENFLOW INTEGRATION — My Services & My Business
+// ══════════════════════════════════════════════════════════════
+
+var ZF_KEYS = { services: 'sphere_zf_services_url', business: 'sphere_zf_business_url' };
+var ZF_SYNCED_APPTS_KEY = 'sphere_zf_synced_appointments';
+
+// ── Load saved ZenFlow URLs on startup ──
+(function initZenFlow(){
+  var srvUrl = localStorage.getItem(ZF_KEYS.services);
+  var bizUrl = localStorage.getItem(ZF_KEYS.business);
+  if(srvUrl) _applyZFConnection('services', srvUrl, false);
+  if(bizUrl) _applyZFConnection('business', bizUrl, false);
+  // Listen for postMessage events from ZenFlow iframes
+  window.addEventListener('message', function(e){
+    if(!e.data || !e.data.type) return;
+    if(e.data.type === 'zf:appointments'){
+      _onZFAppointments(e.data.appointments || [], e.data.source || 'services');
+    }
+    if(e.data.type === 'zf:auth_token'){
+      // Future: auto-propagate ZenFlow auth token between views
+      console.log('[ZenFlow bridge] auth token received');
+    }
+  });
+})();
+
+// ── Connect ZenFlow (called by the connect-card button) ──
+function connectZenFlow(type){
+  var input = document.getElementById('zf-' + type + '-url-input');
+  var url = (input ? input.value.trim() : '');
+  if(!url){
+    toast('Please enter your ZenFlow URL first');
+    return;
+  }
+  if(!url.startsWith('http')) url = 'https://' + url;
+  try { new URL(url); } catch(e){ toast('That doesn\'t look like a valid URL'); return; }
+  localStorage.setItem(ZF_KEYS[type], url);
+  _applyZFConnection(type, url, true);
+  toast('🔗 ZenFlow connected! Loading…');
+}
+
+// ── Apply connection state ──
+function _applyZFConnection(type, baseUrl, isNew){
+  var connectCard  = document.getElementById('zf-' + type + '-connect');
+  var iframeWrap   = document.getElementById('zf-' + type + '-iframe-wrap');
+  var toolbar      = document.getElementById('zf-' + type + '-toolbar');
+  var iframe       = document.getElementById('zf-' + type + '-iframe');
+  if(!connectCard || !iframeWrap || !toolbar || !iframe) return;
+  connectCard.style.display  = 'none';
+  iframeWrap.style.display   = 'flex';
+  toolbar.style.display      = 'flex';
+  // Route to the right default page
+  var startPath = (type === 'services') ? '/buyer/dashboard' : '/';
+  iframe.src = baseUrl.replace(/\/$/, '') + startPath;
+}
+
+// ── Services sub-nav ──
+function zfServicesNav(tab){
+  var baseUrl = localStorage.getItem(ZF_KEYS.services);
+  if(!baseUrl){ toast('Connect ZenFlow first'); return; }
+  var paths = { jobs:'/buyer/dashboard', browse:'/community', messages:'/buyer/messages', schedule:'/staff/portal' };
+  var iframe = document.getElementById('zf-services-iframe');
+  if(iframe) iframe.src = baseUrl.replace(/\/$/, '') + (paths[tab] || '/buyer/dashboard');
+  // Update active button
+  ['jobs','browse','messages','schedule'].forEach(function(t){
+    var btn = document.getElementById('zfb-srv-' + t);
+    if(btn) btn.classList.toggle('active', t === tab);
+  });
+}
+
+// ── Business sub-nav ──
+function zfBusinessNav(path){
+  var baseUrl = localStorage.getItem(ZF_KEYS.business);
+  if(!baseUrl){ toast('Connect ZenFlow first'); return; }
+  var iframe = document.getElementById('zf-business-iframe');
+  if(iframe) iframe.src = baseUrl.replace(/\/$/, '') + path;
+  // Update active button
+  var routes = {'/':'dash', '/scheduling':'sched', '/clients':'clients', '/leads':'leads', '/invoicing':'invoice', '/finance':'finance'};
+  Object.keys(routes).forEach(function(p){
+    var btn = document.getElementById('zfb-biz-' + routes[p]);
+    if(btn) btn.classList.toggle('active', p === path);
+  });
+}
+
+// ── Settings overlay (reconfigure URL) ──
+function openZFSettings(type){
+  var currentUrl = localStorage.getItem(ZF_KEYS[type]) || '';
+  var label = type === 'services' ? 'Services (Buyer)' : 'Business';
+  var html = '<div style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2000;display:flex;align-items:center;justify-content:center;" id="zfSettingsOverlay" onclick="if(event.target===this)closeZFSettings()">' +
+    '<div style="background:var(--wh);border-radius:18px;padding:28px 28px 24px;max-width:420px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,.2);">' +
+    '<div style="font-family:\'Fraunces\',serif;font-size:18px;color:var(--txt);margin-bottom:6px;">⚙ ZenFlow — ' + label + '</div>' +
+    '<div style="font-size:12px;color:var(--muted);margin-bottom:18px;">Update the URL for your ZenFlow app. This is the base URL of your deployed Base44 application.</div>' +
+    '<label style="font-size:11px;font-weight:500;color:var(--muted);display:block;margin-bottom:6px;">ZenFlow URL</label>' +
+    '<input id="zfSettingsInput" class="zf-url-input" value="' + currentUrl + '" placeholder="https://your-app.base44.app">' +
+    '<div style="display:flex;gap:8px;margin-top:14px;">' +
+    '<button onclick="saveZFSettings(\'' + type + '\')" class="zf-connect-btn primary" style="flex:1;">Save & Reconnect</button>' +
+    '<button onclick="disconnectZenFlow(\'' + type + '\')" class="zf-connect-btn secondary" style="color:var(--rose-d);border:1px solid var(--rose-l);flex:0 0 auto;padding:11px 18px;">Disconnect</button>' +
+    '</div>' +
+    '<button onclick="closeZFSettings()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:var(--hint);cursor:pointer;font-family:inherit;">×</button>' +
+    '</div></div>';
+  var el = document.createElement('div');
+  el.innerHTML = html;
+  el.style.position = 'relative';
+  document.body.appendChild(el);
+}
+
+function closeZFSettings(){
+  var ov = document.getElementById('zfSettingsOverlay');
+  if(ov && ov.parentNode) ov.parentNode.remove();
+}
+
+function saveZFSettings(type){
+  var input = document.getElementById('zfSettingsInput');
+  var url = input ? input.value.trim() : '';
+  if(!url){ toast('Enter a URL first'); return; }
+  if(!url.startsWith('http')) url = 'https://' + url;
+  localStorage.setItem(ZF_KEYS[type], url);
+  closeZFSettings();
+  _applyZFConnection(type, url, true);
+  toast('✓ ZenFlow URL updated');
+}
+
+function disconnectZenFlow(type){
+  localStorage.removeItem(ZF_KEYS[type]);
+  var connectCard  = document.getElementById('zf-' + type + '-connect');
+  var iframeWrap   = document.getElementById('zf-' + type + '-iframe-wrap');
+  var toolbar      = document.getElementById('zf-' + type + '-toolbar');
+  var iframe       = document.getElementById('zf-' + type + '-iframe');
+  if(connectCard)  connectCard.style.display  = 'flex';
+  if(iframeWrap)   iframeWrap.style.display   = 'none';
+  if(toolbar)      toolbar.style.display      = 'none';
+  if(iframe)       iframe.src = '';
+  closeZFSettings();
+  toast('ZenFlow disconnected');
+}
+
+// ── Schedule Sync ──
+// Asks ZenFlow iframe to send its appointments via postMessage, then
+// merges them into Sphere's local schedule tasks and Firestore (if available).
+function syncZenFlowAppointments(type){
+  var iframe = document.getElementById('zf-' + type + '-iframe');
+  if(!iframe || !iframe.src){ toast('Connect ZenFlow first'); return; }
+  var overlay = document.getElementById('zf-' + type + '-sync-overlay');
+  if(overlay) overlay.classList.add('show');
+  // Ask ZenFlow iframe to send back its appointments
+  try {
+    iframe.contentWindow.postMessage({ type: 'sphere:request_appointments' }, '*');
+  } catch(e) {}
+  // Timeout fallback — hide overlay after 6s regardless
+  setTimeout(function(){
+    if(overlay) overlay.classList.remove('show');
+    toast('✓ Schedule sync complete');
+  }, 6000);
+}
+
+// ── Receive appointments from ZenFlow ──
+function _onZFAppointments(appts, source){
+  if(!appts || !appts.length) return;
+  var overlay = document.getElementById('zf-' + source + '-sync-overlay');
+  var stored = JSON.parse(localStorage.getItem(ZF_SYNCED_APPTS_KEY) || '[]');
+  appts.forEach(function(appt){
+    var exists = stored.some(function(s){ return s.id === appt.id; });
+    if(!exists) stored.push({
+      id: appt.id,
+      title: appt.title || appt.service_name || 'Appointment',
+      date: appt.date || appt.scheduled_date,
+      time: appt.time || appt.scheduled_time,
+      provider: appt.provider || appt.business_name,
+      source: source
+    });
+  });
+  localStorage.setItem(ZF_SYNCED_APPTS_KEY, JSON.stringify(stored));
+  // Push to Firestore if Firebase auth is active
+  if(window.firebase){
+    try {
+      var uid = firebase.auth().currentUser && firebase.auth().currentUser.uid;
+      if(uid){
+        var db = firebase.firestore();
+        appts.forEach(function(appt){
+          db.collection('users').doc(uid)
+            .collection('zenflow_appointments')
+            .doc(appt.id || String(Date.now()))
+            .set({
+              title: appt.title || 'Appointment',
+              date: appt.date || appt.scheduled_date || null,
+              time: appt.time || appt.scheduled_time || null,
+              provider: appt.provider || appt.business_name || null,
+              status: appt.status || 'booked',
+              source: source,
+              synced_at: firebase.firestore.FieldValue.serverTimestamp()
+            }, { merge: true });
+        });
+      }
+    } catch(e){ console.warn('[ZenFlow sync] Firestore write failed:', e); }
+  }
+  if(overlay) overlay.classList.remove('show');
+  toast('📅 ' + appts.length + ' appointment' + (appts.length > 1 ? 's' : '') + ' synced to your schedule!');
+}
+
+// ── navTo patch — init panels on first visit ──
+var _zfInited = {};
+(function patchNavTo(){
+  var _origNavTo = navTo;
+  navTo = function(view){
+    _origNavTo(view);
+    if((view === 'services' || view === 'business') && !_zfInited[view]){
+      _zfInited[view] = true;
+    }
+  };
+})();
 </script>
+
 
 <!-- ONBOARDING OVERLAY -->
 <div class="onboarding-overlay" id="onboardingOverlay" style="display:none;">
